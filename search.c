@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include<stdio.h>
+
 
 int func(int arr[],int n,int size)
 {
@@ -8,7 +9,6 @@ int func(int arr[],int n,int size)
 		size= fi-ini+1 ;
 		mid= mid+size/2 ;
 		mide= arr[mid] ;
-		printf("%d ",mide) ;
 		
 		if(n==mide)
 		{
@@ -25,9 +25,7 @@ int func(int arr[],int n,int size)
 			ini=mid ;
 			fi=snc-1 ;
 		}
-		printf("%d %d ",ini,fi) ;
 		size= fi-ini+1 ;
-		printf("%d ",size) ;
 	}
 	return count ;
 }
@@ -35,10 +33,13 @@ int func(int arr[],int n,int size)
 int main()
 {
 	int q,size,num,ele ;
+	printf("enter the number of test cases") ;
 	scanf("%d",&q) ;
 	for(int i=0;i<q;i++)
 	{
+		printf("enter size of array") ;
 		scanf("%d",&size) ;
+		printf("enter number to be searched") ;
 		scanf("%d",&num) ;
 		int arr[size] ;
 		for(int j=0;j<size;j++)
@@ -49,26 +50,3 @@ int main()
 		printf("%d",func( arr, num, size)) ;
 	}
 }
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
