@@ -1,0 +1,75 @@
+# include<stdio.h>
+# include<stdlib.h>
+int main()
+{
+    int n ;
+    printf("enter the value of n \n") ;
+    scanf("%d",&n) ;
+    int arr[n] ;
+    for(int x=0;x<n;x++)
+    {
+        arr[x]=x+1 ;
+    }
+    //printing the first permutation
+    int h=1 ;
+    printf("%d..  ",h++) ;
+    for(int x=0;x<n;x++)
+    {
+        printf("%d ",arr[x]) ;
+    }
+    printf("\n") ;
+    int count=1 ;
+    int i,j,temp ;
+    int arr1[n] ;
+    
+    //algorithm
+    while(count!=0)
+    {
+        count=0 ;
+        //finding i
+        for(int x=0;x<n-1;x++)
+        {
+            if(arr[x]<arr[x+1])
+            {
+                i=x ;
+                count=1 ;
+            }
+        }
+        //finding j
+        for(int x=0;x<n;x++)
+        {
+            if(arr[i]<arr[x])
+            {
+                j=x ;
+            }
+        }
+        //swapping arr[i] & arr[j]
+        temp=arr[i] ;
+        arr[i]=arr[j] ;
+        arr[j]=temp ;
+        // reversing the order of elements from arr[i] till end
+        if(count!=0)
+        {
+            int u=0 ;
+            for(int x=n-1;x>i;x--)
+            {
+                arr1[u]=arr[x] ;
+                u++ ;
+            }
+            u=0 ;
+            for(int x=i+1;x<n;x++)
+            {
+                arr[x]=arr1[u] ;
+                u++ ;
+            }
+            //printing the remaining permutations
+            printf("%d..  ",h++) ;
+            for(int x=0;x<n;x++)
+            {
+                printf("%d ",arr[x]) ;
+            } 
+            printf("\n") ;   
+        }
+        
+    }
+}
