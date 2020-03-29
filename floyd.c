@@ -33,23 +33,23 @@ int main()
 
 	printf("Enter the no. of vertices=");
 	scanf("%d",&n);
-
+	int arr[n][n] ;
 	printf("Enter the weighted matrix ( enter 99999 for infinity)");
 	for(int i=0;i<n;i++)
 	{
 		for(int j=0;j<n;j++)
 		{
-			scanf("%d",&a[i][j]);
+			scanf("%d",&arr[i][j]);
 
 		}
 	}
-	floyd(a);
+	floyd(arr);
 	printf("All Pair Shortest paths :");
 	for(int i=0;i<n;i++)
 	{
 		for(int j=0;j<n;j++)
 		{
-			printf("%d\n",a[i][j]);
+			printf("%d\n",arr[i][j]);
 
 		}
 
