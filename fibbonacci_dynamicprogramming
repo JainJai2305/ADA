@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int c ;
+    printf("say n for nth fibbonacci \n") ;
+    scanf("%d",&c) ;
+    int arr[c+3] ;
+    arr[0]=0 ;
+    arr[1]=1 ;
+    for(int x=2;x<c;x++)
+    {
+        arr[x]=arr[x-1]+arr[x-2] ;
+    }
+    for(int x=0;x<c;x++)
+    {
+        printf(" %d",arr[x]) ;
+    }
+    printf("\n") ;
+    printf("the nth fibbo is %d",arr[c-1]) ;
+}
