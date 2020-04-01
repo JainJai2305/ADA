@@ -1,0 +1,84 @@
+import java.util.* ;
+import java.util.Arrays; 
+import java.util.Collections; 
+class knapsackdp
+{public static void main(String args[])
+{
+    Scanner sc=new Scanner(System.in) ;
+    int n ;
+    System.out.println("enter the number of objects") ;
+    n=sc.nextInt() ;
+    System.out.println("enter the weights") ;
+    int []w=new int[n] ;
+    for(int x=0;x<n;x++)
+    {
+        w[x]=sc.nextInt() ;
+    }
+    Arrays.sort(w) ;
+    int []p=new int[n] ;
+    for(int x=0;x<n;x++)
+    {
+        System.out.println("enter the profit of weight "+w[x]) ;
+        p[x]=sc.nextInt() ;
+    }
+    System.out.println("enter the limit of knapsack") ;
+    int limit=sc.nextInt() ; 
+    int [][]kdp=new int[n+1][limit+1] ;
+
+    int weight=-1,profit=-1,tw=0,tp=0 ;
+    
+    for(int x=1;x<=n;x++)
+    {
+        weight =w[x-1] ;
+        if(weight>limit)
+        {
+            for(int y=1;y<=limit;y++)
+            {
+                kdp[x][y]=kdp[x-1][y] ;
+            }
+            continue ;
+        }
+        profit=p[x-1] ;
+        for(int y=1;y<weight;y++)
+        {      
+            kdp[x][y]=kdp[x-1][y] ;
+        }
+        
+        for(int y=0;y<=limit;y++)
+        {
+            tw=weight+y ;
+            if(tw>limit)
+            {
+                break ;
+            }
+            tp=profit+kdp[x-1][y] ;
+            
+            if(kdp[x-1][tw]<tp)
+            {
+                kdp[x][tw]=tp ;
+            }
+            else
+            {
+                kdp[x][tw]=kdp[x-1][tw] ;
+            }
+        }
+        for(int y=tw+1;y<=limit;y++)
+        {
+            kdp[x][y]=kdp[x][y-1] ;
+        }
+
+    }
+    System.out.print("\n") ;
+    for(int x=0;x<=n;x++)
+    {
+        for(int y=0;y<=limit;y++)
+        {
+            System.out.print(kdp[x][y]+" ") ;
+        }
+        System.out.print("\n") ;
+    }
+    System.out.println("the maximum profit is "+kdp[n][limit]) ;
+
+
+}
+}
