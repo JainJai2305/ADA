@@ -32,9 +32,9 @@ void prim(int v)
 
 int main()
 {
-	printf("Enter the no. of vertices");
+	printf("Enter the no. of vertices \n");
 	scanf("%d",&n);
-	printf("Enter the weighted matrix ( enter 9999 if no edge exist)");
+	printf("Enter the weighted matrix ( enter 9999 if no edge exist) \n");
 	for(int i=1;i<=n;i++)
 	{
 		visited[i]=0;
@@ -43,8 +43,8 @@ int main()
 			scanf("%d",&a[i][j]);
 		}
 	}
-	printf("Minimum spanning tree is");
-	printf("Edges \t Weight");
+	printf("Minimum spanning tree is \n");
+	printf("Edges \t Weight \n");
 	prim(1);
 	printf("Minimum cost =%d ",small);
 	return 0;
