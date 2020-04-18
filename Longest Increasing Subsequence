@@ -1,0 +1,45 @@
+# include<stdio.h>
+int main()
+{
+    int m ;
+    printf("enter the number of elements you want to enter :\n") ;
+    scanf("%d",&m) ;
+    int arr[m] ;
+    printf("enter the numbers :\n") ;
+    for(int x=0;x<m;x++)
+    {
+        scanf("%d",&arr[x]) ;
+    }
+    int l=1,max=-1 ;
+    for(int x=0;x<m-1;x++)
+    {
+        printf("a: %d   b: %d   l: %d\n",arr[x],arr[x+1],l) ;
+        if(arr[x]<arr[x+1])
+        {
+            l++ ;
+            printf("-1\n") ;
+        }
+        else
+        {
+            if(l>max)
+            {
+                max=l ;
+            }
+            l=1 ;
+            printf("1\n") ;
+        }
+    }
+    if(max==1)
+    {
+        printf("the array is in stricly decreasing order\n") ;
+    }
+    else
+    {
+        printf("the length of the  Longest Increasing Subsequence is: %d\n",max) ;
+    }
+
+
+
+
+
+}
