@@ -1,3 +1,4 @@
+// this program shows the working of dijkstra's algorithm on directed graph 
 # include<stdio.h>
 # include<stdlib.h>
 int minf(int arr[],int v)
