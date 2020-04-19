@@ -13,11 +13,9 @@ int main()
     int l=1,max=-1 ;
     for(int x=0;x<m-1;x++)
     {
-        printf("a: %d   b: %d   l: %d\n",arr[x],arr[x+1],l) ;
         if(arr[x]<arr[x+1])
         {
             l++ ;
-            printf("-1\n") ;
         }
         else
         {
@@ -26,7 +24,6 @@ int main()
                 max=l ;
             }
             l=1 ;
-            printf("1\n") ;
         }
     }
     if(max==1)
