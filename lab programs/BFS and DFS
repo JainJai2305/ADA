@@ -1,4 +1,5 @@
 // BFS
+
 import java.util.*;
     class Q{
         int qu[];
@@ -60,7 +61,23 @@ import java.util.*;
         }
          
          
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 //DFS
+
 import java.util.*;
 class DFS {
 
