@@ -25,10 +25,10 @@ int minf(int arr[],int v)
 }
 int main()
 {
-    printf("enter the number of vertices in the directed graph enter -1 for infinity\n") ;
+    printf("enter the number of vertices in the directed graph \n") ;
     int m ;
     scanf("%d",&m) ;
-    printf("enter the adjacency matrix \n") ;
+    printf("enter the adjacency matrix, enter -1 for infinity\n") ;
     int adj[m][m] ;
     for(int x=0;x<m;x++)
     {
